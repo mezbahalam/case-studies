@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Terminal, ArrowRight, Sparkles, BookOpenCheck } from 'lucide-react';
+import { Terminal, ArrowRight, BookOpenCheck } from 'lucide-react';
 import ParallelCiCaseStudy from './caseStudies/ParallelCiCaseStudy';
 import ScalingCsvCaseStudy from './caseStudies/ScalingCsvCaseStudy';
 import AdapterPatternCaseStudy from './caseStudies/AdapterPatternCaseStudy';
@@ -172,7 +172,7 @@ const App = () => {
   }, [view]);
 
   const navigate = (newView: View) => {
-    const path = newView === 'home' ? '/' : newView === 'chatNavigator' ? '/extensions/chat-navigator' : `/${newView}`;
+    const path = newView === 'home' ? '/' : `/${newView}`;
     window.history.pushState({ view: newView }, '', path);
     setView(newView);
   };
